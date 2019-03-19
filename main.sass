@@ -1,0 +1,425 @@
+*
+  box-sizing: border-box
+  font-family: sans-serif
+  padding: 0
+  margin: 0
+
+header
+  display: flex
+  justify-content: space-between
+  padding: 1rem
+  align-items: center
+  flex-wrap: wrap
+
+@media (max-width: 635px)
+  header 
+    justify-content: center  
+  header .address, header .hours
+    display: none
+
+
+.address, .hours
+  font-family: sans-serif
+  font-size: .75rem
+  color: grey
+
+.address
+  color: #343434
+  &:before
+    content: '\f041'
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    margin-right: 5px
+    font-size: 18px
+
+.hours:before
+  color: grey
+  font-family: "Font Awesome 5 Free"
+  font-weight: 900
+  content: '\f017'
+  margin-right: 5px
+  font-size: 18px
+
+nav
+  background: #f2f2f2
+  display: flex
+  padding: 0 25%
+  position: sticky
+  top: 0
+  z-index: 1    
+  @media(max-width: 414px)
+      padding: 0
+      position: static
+
+  ul
+    display: flex
+    width: 100%
+    justify-content: space-between
+    list-style: none
+    text-align: center
+    text-transform: uppercase
+    margin: 2rem 0
+    @media(max-width: 414px)
+        flex-direction: column
+        margin: 0
+    li
+      &:nth-child(3)
+        position: relative
+        &:hover .submenu
+          display: block
+      a
+        text-decoration: none
+        color: #4d4d4d
+        font-weight: bold
+        padding: 1rem
+        border-radius: 5px
+        transition: .3s
+        &:hover, &.active
+          color: white
+          background: darkgreen
+        @media(max-width: 414px)
+            display: block
+            padding: .25rem o
+            border-radius: 0
+
+.submenu
+  display: none
+  background: #dad3d3
+  top: .25rem
+  position: absolute
+  padding-left: 0
+  border-radius: 5px
+  left: -40%
+  width: 10rem
+  li
+    border-bottom: 1px solid #999999
+    &:last-child
+      border-bottom: none
+  a
+    color: #4d4d4d
+    display: block
+    &:hover
+      background-color: green
+      color: white
+
+.hero
+  width: 100%
+  height: 75vh
+  background-image: url("https://picsum.photos/3888/2592?image=674")
+  background-color: #4286f4
+  background-blend-mode: multiply
+  background-size: cover
+  text-align: center
+  padding-top: 10rem
+  color: white
+  box-sizing: border-box
+  margin-bottom: 5rem
+  @media(max-width: 846px)
+    height: auto
+    padding: 10vmax 0
+
+@media (max-width: 540px)
+  .hero
+    background-image: none
+    background-color: darkblue
+
+h1
+  font-size: 5rem
+  font-family: 'PT Sans', sans-serif
+
+.hero p
+  font-size: 1.5rem
+  margin-bottom: 5rem
+
+@media (max-width: 540px)
+  .hero p
+    display: none
+
+button
+  color: white
+  padding: 1rem 2rem
+  text-transform: uppercase
+  border-radius: 5px
+  border: none
+  font-weight: bold
+  font: sans-serif
+  letter-spacing: 2px
+  font-size: 1rem
+  margin-left: 1rem
+  cursor: pointer
+
+@media (max-width: 540px)
+  .hero button
+    margin: 1rem 0
+
+.contact
+  background-color: green
+
+.learn
+  background-color: transparent
+  border: 2px solid white
+
+h2
+  font-family: 'PT Sans', sans-serif
+  font-size: 2.5rem
+  text-align: center
+  text-transform: capitalize
+  letter-spacing: 1px
+
+.departments
+  display: flex
+  justify-content: space-around
+  margin: 3rem 0 5rem 0
+  padding: 0 5em
+  flex-wrap: wrap
+  row-gap: 2rem
+
+.department
+  text-align: center
+  width: 15rem
+  min-width: 200px
+  height: 20rem
+  color: white
+  font-family: 'PT Sans', sans-serif
+  font-weight: bold
+  font-size: 4vmin
+  letter-spacing: 2px
+  text-shadow: 0 0 3px #000
+  background-repeat: no-repeat
+  background-size: cover
+
+.produce
+  background-image: url("https://images.unsplash.com/photo-1432457990754-c8b5f21448de?ixlib=rb-0.3.5&s=d0cf69df743f2675102db13190c7fbb3&auto=format&fit=crop&w=500&q=60")
+  p
+    margin-top: 0
+    background: rgba(11, 45, 12, 0.8)
+    padding: .15em 0
+
+.smoothie
+  background-image: url("https://images.unsplash.com/photo-1459162141474-3bd9d0fb079d?ixlib=rb-0.3.5&s=36de4b4bd861d66bab6b8a75105b0271&auto=format&fit=crop&w=500&q=60")
+  p
+    margin-top: 0
+    background: rgba(89, 4, 35, 0.6)
+    padding: .15em 0
+
+.meals
+  background-image: url("https://images.unsplash.com/photo-1515516969-d4008cc6241a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0bba6de37870659d295e18130e77672e&auto=format&fit=crop&w=500&q=60")
+  p
+    margin-top: 0
+    background: rgba(112, 32, 3, 0.8)
+    padding: .15em 0
+
+.choice
+  background: #f2f2f2
+  display: grid
+  grid-template-columns: 1fr 25% 25% 1fr
+  grid-gap: 5%
+  h2
+    margin: 1rem 0
+  h3
+    text-transform: capitalize
+    padding-bottom: 0
+    letter-spacing: 1px
+  p
+    color: #8c8c8c
+    margin: .5rem 0 1.5rem
+  .left
+    grid-column: 2/3
+    background-image: url("https://images.unsplash.com/photo-1507733221-b6eabd5d0d37?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9999f5cf9b78353d3e5ec3f82942df82&auto=format&fit=crop&w=500&q=60")
+    background-position: 0 bottom
+
+@media (max-width: 1238px)
+  .choice
+    display: flex
+    flex-wrap: wrap
+    padding: 0 5rem
+
+@media (max-width: 344px)
+  .choice
+    padding: 0 1rem
+
+.right
+  grid-column: 3/4
+  padding-bottom: 2rem
+  div
+    h3:before
+      margin-left: -2.5rem
+      margin-right: 1.1rem
+      font-family: "Font Awesome 5 Free"
+      color: darkgreen
+    &:first-of-type h3:before
+      content: '\f118'
+    &:nth-of-type(2) h3:before
+      content: '\f155'
+      position: relative
+      left: .3rem
+      padding-right: .5rem
+    &:last-of-type h3:before
+      content: '\f0c0'
+
+@media (max-width: 344px)
+  .right div h3:before
+    display: none
+
+.special
+  display: grid
+  margin-top: 2rem
+  margin-bottom: 4rem
+  grid-template-columns: 1fr 30% 30% 1fr
+  grid-template-rows: auto
+  grid-template-areas: " . title title . " " . descrip descrip . " " . left right . "
+  justify-items: center
+  h2
+    grid-area: title
+  p
+    grid-area: descrip
+    text-align: center
+    width: 50%
+    margin: 0 0 4rem 0
+  .left
+    grid-area: left
+    img
+      width: 100%
+      height: auto
+  .right
+    grid-area: right
+    margin-left: 2em
+    @media(max-width: 846px)
+        text-align: center
+
+@media (max-width: 1539px)
+  .special
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: "title title" "descrip descrip" "left right"
+    padding-left: 2rem
+
+@media (max-width: 924px)
+  .special
+    grid-template-columns: 1fr
+    grid-template-areas: "title" "descrip" "left" "right"
+
+.count
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.special h3
+  text-transform: capitalize
+  letter-spacing: 1px
+  margin: 1rem 0
+  
+.time
+  display: flex
+    
+
+  span
+    font-size: .75rem
+    font-family: sans-serif
+    color: #000
+
+#days, #minutes, #hours, #seconds
+  border: 2px solid #ccc
+  border-radius: 50%
+  height: 6rem
+  width: 6rem
+  margin-right: 1em
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: sans-serif
+  font-size: 2.5rem
+  color: #000
+  flex-direction: column
+
+.testimony
+  text-align: center
+  background: #f2f2f2
+  padding: 2rem 0
+  height: 30em
+  position: relative
+  .arrow
+    fill: #eee
+    z-index: 1
+    padding: 1rem
+  #right
+    right: 0
+    position: absolute
+    fill: #9f9c9c
+    top: 25%
+    transform: scale(2)
+  #left
+    left: 0
+    position: absolute
+    fill: #9f9c9c
+    top: 25%
+    transform: scale(2) rotateY(180deg)
+  .arrow svg:hover
+    fill: #5f5c5c
+    cursor: pointer
+
+.testimony_inner
+  position: relative
+  width: 50%
+  height: 80%
+  margin: 0 auto 5em
+  overflow: hidden
+  img
+    width: 15%
+    border-radius: 50%
+  p
+    color: #5f5c5c
+  #customers
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    transition: 1s ease-in-out
+
+.testimony
+  .customer
+    min-width: 100%
+  h3, p:last-child
+    text-transform: capitalize
+    font-weight: bold
+    letter-spacing: 1px
+    color: #2e2e2e
+    margin: 1.5rem 0
+
+footer
+  display: flex
+  justify-content: space-around
+  background-color: #c99045
+  padding-bottom: 3rem
+  background-color: #c99045
+  padding-bottom: 3rem
+  ul
+    list-style: none -around
+    list-style: none
+    span
+      color: darkgreen
+      font-weight: bold
+      letter-spacing: 1px
+    li, footer:last-of-type
+      color: #4e3413
+  .twitter
+    text-align: center
+  h3
+    text-transform: capitalize
+  .social
+    ul
+      display: flex
+      justify-content: space-between
+    i
+      font-size: 2rem
+      color: #4e3413
+  &:last-of-type
+    padding: 1rem 0
+    font-size: .8rem
+    color: #c99045
+    background: #4e3413
+    a
+      color: #c99045
+
+/*# sourceMappingURL=main.css.map
