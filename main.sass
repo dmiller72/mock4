@@ -4,14 +4,24 @@
   padding: 0
   margin: 0
 
+@media(max-width: 414px)
+  body 
+    overflow-x: hidden
+
 header
   display: flex
   justify-content: space-between
   padding: 1rem
   align-items: center
-  flex-wrap: wrap
+  @media(max-width: 414px)
+    padding: .25rem 1rem
+  svg 
+    align-self: flex-end
+    cursor: pointer
+    @media(min-width: 450px)
+      display: none
 
-@media (max-width: 635px)
+@media(max-width: 635px)
   header 
     justify-content: center  
   header .address, header .hours
@@ -40,6 +50,8 @@ header
   margin-right: 5px
   font-size: 18px
 
+.show
+  transform: translateX(0)
 nav
   background: #f2f2f2
   display: flex
@@ -48,8 +60,15 @@ nav
   top: 0
   z-index: 1    
   @media(max-width: 414px)
-      padding: 0
-      position: static
+    padding: 0
+    position: absolute
+    transform: translateX(100%)
+    transition: 300ms
+    width: 100%
+    top: 8%
+    height: 100vh
+
+
 
   ul
     display: flex
@@ -60,8 +79,8 @@ nav
     text-transform: uppercase
     margin: 2rem 0
     @media(max-width: 414px)
-        flex-direction: column
-        margin: 0
+      flex-direction: column
+      margin: 0
     li
       &:nth-child(3)
         position: relative
@@ -78,9 +97,9 @@ nav
           color: white
           background: darkgreen
         @media(max-width: 414px)
-            display: block
-            padding: .25rem o
-            border-radius: 0
+          display: block
+          padding: .25rem o
+          border-radius: 0
 
 .submenu
   display: none
